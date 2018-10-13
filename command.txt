@@ -1,0 +1,41 @@
+// よく使うコマンド
+php artisan migrate:refresh -seed
+
+
+// 使ったコマンドは大体ここに書いている
+
+php artisan make:model Model/Message
+php artisan make:model Model/MessageContent
+php artisan make:model Model/MessageType
+php artisan make:model Model/Reaction
+php artisan make:model Model/ReactionIcon
+php artisan make:model Model/Star
+php artisan make:model Model/Workspace
+
+
+
+php artisan make:factory ChannelFactory
+php artisan make:factory MessageContentFactory
+php artisan make:factory MessageFactory
+php artisan make:factory ReactionsFactory
+php artisan make:factory UserFactory
+php artisan make:factory WorkspaceFactory
+
+
+php artisan make:seeder MessageContentsTableSeeder
+php artisan make:seeder MessageTypesTableSeeder
+php artisan make:seeder ReactionIconsTableSeeder
+php artisan make:seeder UserWorkspaceChannelReactionsTableSeeder
+
+
+// laravel 5.6 だと以下がないと、uuid の生成に失敗するらしい
+
+composer require "moontoast/math"
+
+php artisan make:auth
+
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+php artisan jwt:secret
+
+php artisan make:controller AuthController
