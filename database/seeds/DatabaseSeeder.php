@@ -29,10 +29,10 @@ class DatabaseSeeder extends Seeder
         factory(Message::class, 100)->create();
 
         $this->call([
+            RolesTableSeeder::class, // 権限たち
+            PermissionTableSeeder::class, // パーミッション
+            PermissionRoleTableSeeder::class, // 権限とパーミッションの関係
             UserWorkspaceChannelReactionsTableSeeder::class, // ユーザーとワークスペースとチャンネル
-            MessageContentsTableSeeder::class, // メッセージのコンテンツ
-            RolesTableSeeder::class, // 権限
-            PermissionTableSeeder::class, // パーミッションたち (出来ることリスト)
         ]);
     }
 }

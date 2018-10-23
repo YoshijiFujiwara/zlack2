@@ -80,12 +80,12 @@ class PermissionTableSeeder extends Seeder
                 'description' => ''
             ],
             [
-                'name' => 'ConfigureChannelSave',
+                'name' => 'ConfigureChannel',
                 'alias' => 'チャンネル保存ポリシーを設定する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ConfigurePrivateChannel',
                 'alias' => 'プライベートチャンネル保存ポリシーを設定する',
                 'description' => ''
             ],
@@ -94,27 +94,27 @@ class PermissionTableSeeder extends Seeder
              * 通知
              */
             [
-                'name' => '',
+                'name' => 'announce@Channel@Here',
                 'alias' => '@channel・@here でのチャンネル内アナウンス ',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'announce@Everyone',
                 'alias' => '@everyone でのワークスペース内アナウンス ',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'PerticipateInUserGroup',
                 'alias' => 'ユーザーグループへの加入',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ManagementUserGroup',
                 'alias' => 'ユーザーグループの管理またはメンション',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ConfigureReminder',
                 'alias' => 'チャンネルまたはメンバーのリマインダー設定',
                 'description' => ''
             ],
@@ -123,67 +123,67 @@ class PermissionTableSeeder extends Seeder
              * ワークスペースの管理
              */
             [
-                'name' => '',
+                'name' => 'DeleteUserFromWorkspace',
                 'alias' => 'チャンネルからメンバーを削除する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'DeleteUserFromPrivateChannel',
                 'alias' => 'プライベートチャンネルからメンバーを削除する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'InviteGuestToPublicChannel',
                 'alias' => 'ゲストをパブリックチャンネルに招待',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'InviteMultiChannelGuestToPrivateChannel',
                 'alias' => 'マルチチャンネルゲストをプライベートチャンネルに招待',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'InviteSingleChannelGuestToPrivateChannel',
                 'alias' => 'シングルチャンネルゲストをプライベートチャンネルに招待',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'DeleteOtherMemberMessage',
                 'alias' => '他のメンバーのメッセージを削除',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'InviteNewMember',
                 'alias' => '新しいメンバーの招待',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'InviteNewGuest',
                 'alias' => '新しいゲストメンバーを招待',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'DeleteMemberAccount',
                 'alias' => 'メンバーのアカウントの解除',
                 'description' => ''
             ],
             [
-                'name' => '',
-                'alias' => 'ワークスペースの管理者に任命する	',
+                'name' => 'AppointToWorkspaceAdministrator',
+                'alias' => 'ワークスペースの管理者に任命する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeWorkspaceAdminToMember',
                 'alias' => 'ワークスペースの管理者を通常メンバーに戻す',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'AppointToWorkspaceOwner',
                 'alias' => 'ワークスペースのオーナーに任命する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeWorkspaceOwnerToMember',
                 'alias' => 'ワークスペースのオーナーを通常メンバーに戻す',
                 'description' => ''
             ],
@@ -192,37 +192,37 @@ class PermissionTableSeeder extends Seeder
              * ワークスペースの設定
              */
             [
-                'name' => '',
+                'name' => 'ConfigureDefultChannelSettings',
                 'alias' => 'デフォルトのチャンネルを設定',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ConfigureSearchRegistrationInWorkspace',
                 'alias' => 'ワークスペース検索・新規登録に関する設定',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ConfigureNameDisplayGuideline',
                 'alias' => '名前の表示ガイドラインの設定',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ConfigureWorkspaceLanguage',
                 'alias' => 'ワークスペースの言語を設定する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeWorkspaceNameOrUrl',
                 'alias' => 'ワークスペースの名前または URL を変更する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ResetAllMemberPassword',
                 'alias' => 'メンバー全員のパスワードをリセットする',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'CreateUserGroup',
                 'alias' => 'ユーザーグループを作成/編集する',
                 'description' => ''
             ],
@@ -231,62 +231,62 @@ class PermissionTableSeeder extends Seeder
              * その他の管理項目
              */
             [
-                'name' => '',
+                'name' => 'UseAnalytics',
                 'alias' => 'アナリティクスの閲覧と使用',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeNameAndDisplayName',
                 'alias' => '氏名と表示名を変更する*',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeEmail',
                 'alias' => 'メールアドレスを変更する*',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'UpgradePayingPlan',
                 'alias' => '有料プランへアップグレードする',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ChangeWorkspacePlan',
                 'alias' => 'ワークスペースのプランを変更する**',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'AddPaymentMethod',
                 'alias' => '支払い方法を追加する**',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'ReadBillOfParticulars',
                 'alias' => '請求明細書を確認',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'SelectAuthMethod',
                 'alias' => '認証方法を選択',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'UseStandardExport',
                 'alias' => 'Standard Export を利用する',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'UseCorporateExport',
                 'alias' => 'Corporate Export を利用する',
                 'description' => '(対象ワークスペースの場合)'
             ],
             [
-                'name' => '',
+                'name' => 'AssignPrimaryOwner',
                 'alias' => 'プライマリーオーナーの権限を譲渡',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'DeleteWorkspace',
                 'alias' => 'ワークスペースを削除する***',
                 'description' => ''
             ],
@@ -295,12 +295,12 @@ class PermissionTableSeeder extends Seeder
              * App & インテグレーション
              */
             [
-                'name' => '',
+                'name' => 'TurnOnAppInstallRestriction',
                 'alias' => 'アプリのインストール制限機能をオンにする',
                 'description' => ''
             ],
             [
-                'name' => '',
+                'name' => 'AddAppAndIntegration',
                 'alias' => 'アプリとインテグレーションを追加する',
                 'description' => ''
             ],

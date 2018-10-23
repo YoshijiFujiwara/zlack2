@@ -20,7 +20,6 @@ class UserWorkspaceChannelReactionsTableSeeder extends Seeder
 
         // インサート用データ
         $insertDatas = array();
-        $channelDatas = array();
         foreach ($allUsers as $key => $user) {
             $workspaceIds = array();
             foreach ($allWorkspaces as $workspaceKey => $workspace) {
@@ -36,46 +35,15 @@ class UserWorkspaceChannelReactionsTableSeeder extends Seeder
                     $insertDatas[] = [
                         'user_id' => $user->id,
                         'workspace_id' => $workspaceId,
+                        'role_id' => '3', // とりあえず全員メンバーでいいや
                         'is_inviting' => $is_inviting
                     ];
-
-                    // is_invitingがfalseのときに、channel_userも登録しておく
-                    $channles = \App\Model\Channel::where('workspace_id', $workspaceId)->get();
-                    // channelに所属する確率は70%くらいといったところか
-                    foreach ($channles as $channle) {
-                        if (rand(0,100) % 3 === 0 || 1) {
-                            $channelDatas[] = [
-                                'user_id' => $user->id,
-                                'channel_id' => $channle->id,
-                                'is_inviting' => (rand(0, 100) > 30)? false: true,
-                            ];
-
-                            // そのチャンネルのメッセージ一覧
-                            $messages = \App\Model\Message::where('channel_id', $channle->id)->get();
-
-                            foreach ($messages as $message) {
-                                if (rand(0, 100) > 70) {
-                                    DB::table('reactions')->insert([
-                                        'user_id' => $user->id,
-                                        'message_id' => $message->id,
-                                        'icon_id' => \App\Model\ReactionIcon::all()->random()->id
-                                    ]);
-                                }
-                                if (rand(0, 100) > 30) {
-                                    DB::table('stars')->insert([
-                                        'user_id' => $user->id,
-                                        'message_id' => $message->id,
-                                    ]);
-                                }
-                            }
-                        }
-                    }
-
                 } else {
                     $is_inviting = true;
                     $insertDatas[] = [
                         'user_id' => $user->id,
                         'workspace_id' => $workspaceId,
+                        'role_id' => '3', // とりあえず全員メンバーでいいや
                         'is_inviting' => $is_inviting,
                     ];
                 }
@@ -83,6 +51,5 @@ class UserWorkspaceChannelReactionsTableSeeder extends Seeder
         }
 
         DB::table('user_workspace')->insert($insertDatas);
-        DB::table('channel_user')->insert($channelDatas);
     }
 }

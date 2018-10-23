@@ -7,7 +7,6 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-use
 
 class User extends Authenticatable implements JWTSubject
 {

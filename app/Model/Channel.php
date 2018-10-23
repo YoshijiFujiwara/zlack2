@@ -27,15 +27,6 @@ class Channel extends Model
     }
 
     /**
-     * 所属するユーザー
-     * many to many
-     */
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'channel_user', 'channel_id', 'user_id');
-    }
-
-    /**
      * 所属するワークスペース
      */
     public function workspace()

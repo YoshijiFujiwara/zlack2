@@ -24,6 +24,11 @@ class CreateMessagesTable extends Migration
             $table->string('share_message_id')->nullable()->comment('他のメッセージの共有だった場合');
             $table->timestamps();
             $table->softDeletes();
+
+//            $table->foreign('user_id')->references('id')->on('users'); // 外部キー
+//            $table->foreign('channel_id')->references('id')->on('channels'); // 外部キー
+////            $table->foreign('parent_message_id')->references('id')->on('messages'); // 外部キー
+//            $table->foreign('type_id')->references('id')->on('types'); // 外部キー
         });
     }
 

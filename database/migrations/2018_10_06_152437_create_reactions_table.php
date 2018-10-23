@@ -17,6 +17,9 @@ class CreateReactionsTable extends Migration
             $table->string('user_id');
             $table->string('message_id');
             $table->string('icon_id')->comment('アイコンのID');
+
+//            $table->foreign('user_id')->references('id')->on('users'); // 外部キー
+//            $table->foreign('message_id')->references('id')->on('messages'); // 外部キー
         });
     }
 

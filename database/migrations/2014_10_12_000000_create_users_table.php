@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email'); // ワークスペースごとに登録するため、emailの重複を許可する
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

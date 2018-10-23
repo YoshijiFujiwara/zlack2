@@ -16,6 +16,9 @@ class CreateStarsTable extends Migration
         Schema::create('stars', function (Blueprint $table) {
             $table->string('user_id');
             $table->string('message_id');
+
+//            $table->foreign('user_id')->references('id')->on('users'); // 外部キー
+//            $table->foreign('message_id')->references('id')->on('messages'); // 外部キー
         });
     }
 

@@ -44,14 +44,6 @@ class Message extends Model
     }
 
     /**
-     * メッセージのコンテンツ
-     */
-    public function content()
-    {
-        return $this->hasOne(MessageContent::class, 'origin_id');
-    }
-
-    /**
      * ユーザーとメッセージの中間テーブル的な位置にstarsテーブルがある
      */
     public function stars()

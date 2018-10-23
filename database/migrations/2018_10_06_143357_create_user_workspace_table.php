@@ -19,6 +19,10 @@ class CreateUserWorkspaceTable extends Migration
             $table->integer('role_id')->comment('ユーザーがこのワークスペースで持つロール');
             $table->boolean('is_inviting')->default(0)->comment('招待中ならtrue');
             $table->timestamps();
+
+
+//            $table->foreign('user_id')->references('id')->on('users'); // 外部キー
+//            $table->foreign('workspace_id')->references('id')->on('workspaces'); // 外部キー
         });
     }
 
