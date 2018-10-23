@@ -31,6 +31,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserWorkspaceChannelReactionsTableSeeder::class, // ユーザーとワークスペースとチャンネル
             MessageContentsTableSeeder::class, // メッセージのコンテンツ
+            RolesTableSeeder::class, // 権限
+            PermissionTableSeeder::class, // パーミッションたち (出来ることリスト)
         ]);
     }
 }

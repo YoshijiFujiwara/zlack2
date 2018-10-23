@@ -17,6 +17,7 @@ class CreateChannelsTable extends Migration
             $table->string('id')->primary();
             $table->string('workspace_id');
             $table->string('name')->comment('チャンネル名');
+            $table->string('status')->default('public')->comment('チャンネルの公開設定');
             $table->timestamps();
             $table->softDeletes();
         });

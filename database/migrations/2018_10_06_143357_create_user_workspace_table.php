@@ -16,6 +16,7 @@ class CreateUserWorkspaceTable extends Migration
         Schema::create('user_workspace', function (Blueprint $table) {
             $table->string('user_id');
             $table->string('workspace_id');
+            $table->integer('role_id')->comment('ユーザーがこのワークスペースで持つロール');
             $table->boolean('is_inviting')->default(0)->comment('招待中ならtrue');
             $table->timestamps();
         });
