@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\Role;
+use App\Model\Workspace;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
@@ -91,7 +92,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function workspaces()
     {
-        return $this->belongsToMany(Workspace::class, 'user_workspace', 'user_id', 'workspace_id');
+        return $this->belongsToMany(Workspace::class)->withPivot('user_id', 'workspace_id', 'role_id');
     }
 
     /**
@@ -128,13 +129,5 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(Message::class, 'reactions', 'user_id', 'message_id');
     }
 
-    /**
-     * ユーザーとロールのmany to many 関係
-     * workspaceごとにロールを持つ
-     */
-    public function roles()
-    {
-        // workspace_idも持つことをwithPivotで
-        return $this->belongsToMany(Role::class)->withPivot('workspace_id');
-    }
+
 }

@@ -15,7 +15,7 @@ class CreateMessageTypesTable extends Migration
     {
         Schema::create('message_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique()->comment('メッセージタイプの名称(MessageContentsのカラム名に対応すべき)');
+            $table->string('name')->unique()->comment('メッセージタイプの名称(messagesテーブルのカラム名に対応するべき)');
             $table->string('column_name')->nullable()->comment('message_contentsテーブルに対応するカラム名');
             $table->string('description')->nullable()->comment('メッセージタイプの説明');
         });

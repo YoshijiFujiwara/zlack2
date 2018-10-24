@@ -5,7 +5,6 @@ use App\User;
 use App\Model\Workspace;
 use App\Model\Channel;
 use App\Model\Message;
-use App\Model\MessageContent;
 
 class DatabaseSeeder extends Seeder
 {
