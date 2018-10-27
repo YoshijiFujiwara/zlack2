@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\Model\Workspace;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class WorkspaceResource extends JsonResource
+class ChannelResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +17,9 @@ class WorkspaceResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'workspace' => $this->workspace, // 所属するワークスペース
             'name' => $this->name,
-            'url' => $this->url,
+            'status' => $this->status,
             'created_at' => $this->created_at->diffForHumans()
         ];
     }

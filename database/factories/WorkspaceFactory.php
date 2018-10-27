@@ -4,8 +4,9 @@ use Faker\Generator as Faker;
 use App\Model\Workspace;
 
 $factory->define(Workspace::class, function (Faker $faker) {
+    $workspaceName = str_random(15);
     return [
-        'name' => $faker->address,
-        'url' => $faker->url,
+        'name' => $workspaceName,
+        'url' => 'https://' . $workspaceName . '.zlack.com',
     ];
 });

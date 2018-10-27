@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SignUpRequest;
+use App\Http\Resources\WorkspaceResource;
+use App\Model\Workspace;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +20,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['login', 'signup']]);
+        $this->middleware('JWT', ['except' => ['login', 'selectWorkspace', 'signup']]);
     }
 
     /**
@@ -34,6 +37,23 @@ class AuthController extends Controller
         }
 
         return $this->respondWithToken($token);
+    }
+
+
+    /**
+     * ログインするワークスペースを選択
+     */
+    public function selectWorkspace(Request $formData)
+    {
+        // サインインするワークスペース名
+        $workspaceUrl = 'https://' . $formData->workspaceUrl . '.zlack.com';
+        $workspace = Workspace::where('url', $workspaceUrl)->first();
+
+        if (isset($workspace)) {
+            return new WorkspaceResource($workspace);
+        } else {
+            return response()->json(['error' => 'work space not found'], \Symfony\Component\HttpFoundation\Response::HTTP_BAD_REQUEST);
+        }
     }
 
 

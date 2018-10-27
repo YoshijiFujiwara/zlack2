@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ChannelResource;
+use App\Model\Channel;
 use Illuminate\Http\Request;
 
 class ChannelController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 指定したワークスペースに属するチャンネル一覧
      */
-    public function index()
+    public function index($workspaceId)
     {
-        //
+        // 見やすく
+        return ChannelResource::collection(Channel::where('workspace_id', $workspaceId)->get());
     }
 
     /**
